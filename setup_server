@@ -1,0 +1,48 @@
+sudo apt install git htop docker.io -y
+sudo apt-get update -y
+
+#DOCKER
+sudo usermod -aG docker ${uname -n}
+
+# Install docker-compose 1.29.2
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+#### MONGO ####
+
+apt update
+apt install nano systemctl
+nano /etc/mongo
+{
+bind:
+   0.0.0.0:27017
+security:
+  authorization: enabled
+}
+   
+db.createUser( { user: "admin", pwd: "admin123", roles: [ { role: "userAdminAnyDatabase", db: "admin" }, "readWriteAnyDatabase" ]} )
+db.system.users.find()
+
+{
+    "_id" : ObjectId("622471905ac076b2a79b6da3"),
+    "packageName" : "com.filimo.nissanabi",
+    "env" : "prod",
+    "active" : true,
+    "lastVersion" : 0,
+    "supportedVersion" : 0,
+    "cohorts" : {},
+    "markets" : {},
+    "challenges" : {},
+    "referralCodes" : {},
+    "severAddresses" : {}
+}
+################
+
+#SHEKAN DNS
+sudo nano /etc/resolve.conf
+
+#nameserver {other}
+
+nameserver 178.22.122.100
+nameserver 185.51.200.2
+
