@@ -26,8 +26,13 @@ echo ""
 echo -e "\e[31;43m***** TOP 5 MEMORY-CONSUMING PROCESSES *****\e[0m"
 ps -eo %mem,%cpu,comm --sort=-%mem | head -n 6
 echo ""
-echo -e "\e[1;32mDone.\e[0m" 
 
+# -System uname
+echo -e "\e[31;43m***** SYSTEM UNAME *****\e[0m"
+uname -a
+echo ""
+
+echo -e "\e[1;32mDone.\e[0m" 
 
 
 # TIP 1: $ chmod +x my_script.sh
