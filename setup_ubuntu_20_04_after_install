@@ -1,0 +1,13 @@
+sudo su
+apt update -y 
+apt upgrade -y
+
+apt install -y git 
+
+apt install zsh -y
+
+echo $SHELL 
+chsh -s $(which zsh)
+echo $SHELL 
+
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" | y
