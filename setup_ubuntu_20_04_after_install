@@ -1,6 +1,7 @@
 sudo su
 apt update -y 
 apt upgrade -y
+apt-get install htop
 
 apt install -y git 
 
@@ -11,3 +12,12 @@ chsh -s $(which zsh)
 echo $SHELL 
 
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" | y
+
+# install VLC
+# Install Pycharm Pro
+# Install Docker and docker-compose
+# install PgAdmin
+# Install Dbver
+# Install Filezilla
+# Install anyDesk
+# Install  
