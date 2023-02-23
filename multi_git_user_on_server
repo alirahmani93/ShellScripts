@@ -1,0 +1,1 @@
+git clone -c "core.sshCommand=ssh -i ~/.ssh/alirahmani" git@github.com:alirahmani93/birdfans.git
