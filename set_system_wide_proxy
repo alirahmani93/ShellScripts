@@ -1,0 +1,31 @@
+https://computingforgeeks.com/how-to-set-system-wide-proxy-on-ubuntu-debian/
+
+Set System-Wide Proxy settings on CLI
+We will add a shell script file under /etc/profile.d/proxy.sh. This will ensure the settings apply to all logged-in users.
+
+sudo vim /etc/profile.d/proxy.sh
+Populate your proxy values.
+
+# set proxy config via profie.d - should apply for all users
+# 
+export http_proxy="http://10.10.1.10:8080/"
+export https_proxy="http://10.10.1.10:8080/"
+export ftp_proxy="http://10.10.1.10:8080/"
+export no_proxy="127.0.0.1,localhost"
+
+# For curl
+export HTTP_PROXY="http://10.10.1.10:8080/"
+export HTTPS_PROXY="http://10.10.1.10:8080/"
+export FTP_PROXY="http://10.10.1.10:8080/"
+export NO_PROXY="127.0.0.1,localhost"
+Add other IPs you want to exclude from proxy to NO_PROXY & no_proxy environment variable.
+
+Make it executable.
+
+sudo chmod +x  /etc/profile.d/proxy.sh
+Source the file to start using the proxy settings, or alternatively logout and back in.
+
+source /etc/profile.d/proxy.sh
+Confirm:
+
+$ env | grep -i proxy
