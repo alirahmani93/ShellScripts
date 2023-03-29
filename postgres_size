@@ -1,0 +1,16 @@
+# Column size
+select
+    sum(pg_column_size('username')) as total_size,
+    avg(pg_column_size('username')) as average_size,
+    sum(pg_column_size('username')) * 100.0 / pg_relation_size('user_player') as percentage
+from public.user_player;
+
+
+# Table size
+select
+  table_name,
+  pg_size_pretty(pg_relation_size(quote_ident(table_name)))
+from information_schema.tables
+where table_schema = 'public'
+order by 2 desc;
+
