@@ -1,0 +1,21 @@
+Postgres
+
+To restore compressed postgres archives:
+
+The new backups are in .sql.gz format and are created using the command below:
+
+$ docker exec -i postgres pg_dump -U postgres mafia_nights | gzip -v9 > /home/medrick/backups/mafia_stage_pg_${date}.sql.gz
+
+ Use gzip --decompress to extract them.
+
+ EXAMPLE :
+
+ gzip --decompress mafia_nights_stage_2022-12-14.sql.gz 
+
+To restore:  
+
+$ psql -U postgres -d mafia_nights < mafia_nights_stage_2022-12-14.sql
+
+  OR if created with pg_dumpall
+
+$ pg_restore --dbname=newdvdrental --verbose c:\pgbackup\dvdrental.tar
