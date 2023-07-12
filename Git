@@ -1,0 +1,4 @@
+# To change commit message 
+Git rebase -i Head~<number>
+
+user reword againt pick to change commit message and use push --force
