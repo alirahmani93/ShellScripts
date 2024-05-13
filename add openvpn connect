@@ -1,0 +1,1 @@
+nmcli connection import type openvpn file [client].ovpn
