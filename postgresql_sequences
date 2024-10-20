@@ -1,0 +1,11 @@
+see all sequences 
+\ds 
+
+# find last id
+`select * from django_migrations order by id DESC limit 1;` 
+
+check last value of seq
+`SELECT last_value FROM django_migrations_id_seq;`
+
+update sequence
+`SELECT setval('payments_id_seq', 21, true);  `
