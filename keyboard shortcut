@@ -1,0 +1,2 @@
+# /bin/bash -c "< Your command > "
+/bin/bash -c "xclip -selection c < ~/Desktop/new_pycharm_cert.txt"
